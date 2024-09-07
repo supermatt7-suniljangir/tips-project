@@ -1,0 +1,29 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tipproject-dev-b2524-authRole",
+      "UnauthRoleArn": "arn:aws:iam::540031356008:role/amplify-tipproject-dev-b2524-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::540031356008:role/amplify-tipproject-dev-b2524-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-tipproject-dev-b2524-deployment",
+      "UnauthRoleName": "amplify-tipproject-dev-b2524-unauthRole",
+      "StackName": "amplify-tipproject-dev-b2524",
+      "StackId": "arn:aws:cloudformation:eu-north-1:540031356008:stack/amplify-tipproject-dev-b2524/d7b6ce30-6d14-11ef-9a35-0675b666beb7",
+      "AmplifyAppId": "d4hnhwayeffpi"
+    },
+    "categories": {
+      "function": {
+        "tipsLambda": {
+          "deploymentBucketName": "amplify-tipproject-dev-b2524-deployment",
+          "s3Key": "amplify-builds/tipsLambda-44686341596a33393872-build.zip"
+        }
+      },
+      "storage": {
+        "employees": {}
+      },
+      "api": {
+        "tips": {}
+      }
+    }
+  }
+}

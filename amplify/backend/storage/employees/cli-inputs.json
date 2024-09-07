@@ -1,0 +1,10 @@
+{
+  "resourceName": "employees",
+  "tableName": "employees",
+  "partitionKey": {
+    "fieldName": "empId",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
