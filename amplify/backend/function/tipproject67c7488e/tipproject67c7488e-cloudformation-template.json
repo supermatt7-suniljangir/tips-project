@@ -55,12 +55,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "tipsLambda",
+            "tipproject67c7488e",
             {
               "Fn::Join": [
                 "",
                 [
-                  "tipsLambda",
+                  "tipproject67c7488e",
                   "-",
                   {
                     "Ref": "env"
@@ -97,12 +97,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "tipprojectLambdaRole2525a9a0",
+            "tipprojectLambdaRole500ac52c",
             {
               "Fn::Join": [
                 "",
                 [
-                  "tipprojectLambdaRole2525a9a0",
+                  "tipprojectLambdaRole500ac52c",
                   "-",
                   {
                     "Ref": "env"

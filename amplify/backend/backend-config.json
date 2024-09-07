@@ -1,6 +1,6 @@
 {
   "api": {
-    "tips": {
+    "apibcc44e2b": {
       "dependsOn": [
         {
           "attributes": [
@@ -8,7 +8,7 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "tipsLambda"
+          "resourceName": "tipproject67c7488e"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -16,7 +16,7 @@
     }
   },
   "function": {
-    "tipsLambda": {
+    "tipproject67c7488e": {
       "build": true,
       "dependsOn": [
         {
@@ -37,19 +37,19 @@
     }
   },
   "parameters": {
-    "AMPLIFY_function_tipsLambda_deploymentBucketName": {
+    "AMPLIFY_function_tipproject67c7488e_deploymentBucketName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "tipsLambda"
+          "resourceName": "tipproject67c7488e"
         }
       ]
     },
-    "AMPLIFY_function_tipsLambda_s3Key": {
+    "AMPLIFY_function_tipproject67c7488e_s3Key": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "tipsLambda"
+          "resourceName": "tipproject67c7488e"
         }
       ]
     }

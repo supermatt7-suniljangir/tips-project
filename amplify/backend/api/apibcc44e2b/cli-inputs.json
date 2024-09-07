@@ -3,7 +3,7 @@
   "paths": {
     "/api": {
       "name": "/api",
-      "lambdaFunction": "tipsLambda",
+      "lambdaFunction": "tipproject67c7488e",
       "permissions": {
         "setting": "open"
       }
