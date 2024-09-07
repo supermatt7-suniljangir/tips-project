@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+// /* eslint-disable no-unused-vars */
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Employees from "./pages/Employees";
+import Inventory from "./pages/Inventory";
+import AppLayout from "./UI/layout/AppLayout";
+import { ThemeProvider } from "@emotion/react";
+import { createTheme } from "@mui/material";
+import Tip from "./pages/Tip";
+import PaymentSuccess from "./pages/PaymentSuccess";
+import PaymentFailed from "./pages/PaymentFailed";
 function App() {
-  const [count, setCount] = useState(0)
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#212121",
+        dark: "#424242",
+        light: "#fff",
+      },
+    },
+  });
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route path="/" index element={<Dashboard />} />
+            <Route path="/employees" element={<Employees />} />
+            <Route path="/success" element={<PaymentSuccess />} />
+            <Route path="/cancel" element={<PaymentFailed />} />
+            <Route path="/employees/tip/:username" element={<Tip />} />
+            <Route path="/inventory" element={<Inventory />} />
+          </Route>
+        </Routes>
+      </Router>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
