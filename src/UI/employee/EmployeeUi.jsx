@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import EmployeesList from "./EmployeesList";
 import { Box, Typography } from "@mui/material";
 import { getEmployees } from "../../services/employees/api";
-import Spinner from "../common/Spinner";
+import Spinner from "../../common/Spinner";
 
 
 function EmployeeUi() {

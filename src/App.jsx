@@ -1,6 +1,5 @@
 // /* eslint-disable no-unused-vars */
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
 import Employees from "./pages/Employees";
 import Inventory from "./pages/Inventory";
 import AppLayout from "./UI/layout/AppLayout";
@@ -9,6 +8,7 @@ import { createTheme } from "@mui/material";
 import Tip from "./pages/Tip";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentFailed from "./pages/PaymentFailed";
+import HomePage from "./pages/HomePage";
 function App() {
   const theme = createTheme({
     palette: {
@@ -25,7 +25,7 @@ function App() {
       <Router>
         <Routes>
           <Route element={<AppLayout />}>
-            <Route path="/" index element={<Dashboard />} />
+            <Route path="/" index element={<HomePage />} />
             <Route path="/employees" element={<Employees />} />
             <Route path="/success" element={<PaymentSuccess />} />
             <Route path="/cancel" element={<PaymentFailed />} />

@@ -1,9 +1,9 @@
 import { Box, TextField, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
-import ButtonUI from "../common/Button";
+import ButtonUI from "../../common/Button";
 import { useState } from "react";
 import axios from "../../api/axios";
-import Spinner from "../common/Spinner";
+import Spinner from "../../common/Spinner";
 import { red } from "@mui/material/colors";
 
 function TipUI() {

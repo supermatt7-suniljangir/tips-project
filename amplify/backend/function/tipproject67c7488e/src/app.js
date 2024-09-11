@@ -1,6 +1,4 @@
 // https://nrrqsiyft0.execute-api.eu-north-1.amazonaws.com/dev
-
-
 const { DynamoDBClient } = require('@aws-sdk/client-dynamodb');
 const stripe = require('stripe')('sk_test_51PuYRXKZV6JNqDeyIFiSsBYgJPeqV9PEJasaG1DHhfsX3FF7NDahgcLLZSeehyInHeYWB1GovnUhU0jn5AwM1HrG00Vhf29FZ1');
 const { DeleteCommand, DynamoDBDocumentClient, GetCommand, PutCommand, QueryCommand, ScanCommand } = require('@aws-sdk/lib-dynamodb');
@@ -23,7 +21,7 @@ app.use((req, res, next) => {
 
 
 const path = "/api";
-const partitionKeyName = "empID";
+const partitionKeyName = "empId";
 const convertUrlType = (param, type) => type === "N" ? parseInt(param) : param;
 
 /************** HTTP Get method to list objects **************/
