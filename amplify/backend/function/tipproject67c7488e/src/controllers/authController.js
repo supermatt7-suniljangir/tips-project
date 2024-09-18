@@ -1,26 +1,28 @@
-const  { outh2client } = require("../utils/googleConfig");
-const  jwt = require('jsonwebtoken')
-const JWT_SECRET = "348806"
+const  { oauth2client } = require("../utils/googleConfig");
+const  jwt = require('jsonwebtoken');
+const JWT_SECRET = "348806";
+const axios = require('axios');
 
 
-export const googleLogin = async(req, res)=>{
+const googleLogin = async(req, res)=>{
     try{
 // the main logic of google auth
-const code = req.query;
-const {tokens} = await outh2client.getToken(code);
-outh2client.setCredentials(tokens);
+const {code} = req.query;
+const googleRes = await oauth2client.getToken(code);
+oauth2client.setCredentials(googleRes.tokens);
 
-const userRes = await fetch(`https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${tokens.access_token}`);
-const userInfo = await userRes.json(); // Parse the response
-const {email, name, picture} = userInfo.data;
+const userRes = await axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${googleRes.tokens.access_token}`)
 
-const token = jwt.sign({email, name},JWT_SECRET, {
-    expiresIn:'12h'
+const {email, name, picture} = userRes.data;
+
+const token = jwt.sign({email},JWT_SECRET, {
+    expiresIn:"12h"
 } )
 
 res.status(200).json({
     message:'success',
-    token, email, name
+    token,
+    ...userRes.data
 })
     }
     catch(err){
@@ -29,3 +31,5 @@ res.status(500).json({
 })
     }
 }
+
+module.exports = googleLogin;

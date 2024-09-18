@@ -7,12 +7,10 @@ const { DeleteCommand, DynamoDBDocumentClient, GetCommand, PutCommand, QueryComm
 const express = require('express');
 const bodyParser = require('body-parser');
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware');
-import { path } from './helpers';
 const ddbClient = new DynamoDBClient({ region: process.env.TABLE_REGION });
 const ddbDocClient = DynamoDBDocumentClient.from(ddbClient);
-const authRouter = require('./routes/authRoute')
-
-
+const googleLogin = require('./controllers/authController');
+const path = "/api";
 const tableName = "employees-dev";
 const app = express();
 app.use(bodyParser.json());
@@ -100,7 +98,7 @@ app.delete(`${path}/delete/:empId`, async (req, res) => {
 });
 
 
-app.use('/auth', authRouter)
+app.get(`${path}/auth/google`, googleLogin)
 
 
 

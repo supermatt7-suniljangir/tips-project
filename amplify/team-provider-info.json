@@ -15,7 +15,7 @@
       "function": {
         "tipproject67c7488e": {
           "deploymentBucketName": "amplify-tipproject-dev-80953-deployment",
-          "s3Key": "amplify-builds/tipproject67c7488e-6e7a35316d4b724f692b-build.zip"
+          "s3Key": "amplify-builds/tipproject67c7488e-562b6c2f58674747622b-build.zip"
         }
       },
       "storage": {
