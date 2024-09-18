@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { FaShop } from "react-icons/fa6";
-import Logo from "../common/Logo";
-import ButtonUI from "../common/Button";
+import Logo from "../../common/Logo";
+import ButtonUI from "../../common/Button";
 import { RiMenu2Line } from "react-icons/ri";
 
 function Header({ setNavOpen }) {

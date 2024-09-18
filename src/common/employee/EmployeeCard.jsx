@@ -2,9 +2,10 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import ButtonUI from "../common/Button";
+// import ButtonUI from "../../common/Button";
 import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
+import ButtonUI from "../Button";
 
 function EmployeeCard({ employeeData }) {
   return (

@@ -7,9 +7,11 @@ const { DeleteCommand, DynamoDBDocumentClient, GetCommand, PutCommand, QueryComm
 const express = require('express');
 const bodyParser = require('body-parser');
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware');
-
+import { path } from './helpers';
 const ddbClient = new DynamoDBClient({ region: process.env.TABLE_REGION });
 const ddbDocClient = DynamoDBDocumentClient.from(ddbClient);
+const authRouter = require('./routes/authRoute')
+
 
 const tableName = "employees-dev";
 const app = express();
@@ -22,8 +24,7 @@ app.use((req, res, next) => {
 });
 
 
-const path = "/api";
-const partitionKeyName = "empID";
+const partitionKeyName = "empId";
 const convertUrlType = (param, type) => type === "N" ? parseInt(param) : param;
 
 /************** HTTP Get method to list objects **************/
@@ -98,13 +99,19 @@ app.delete(`${path}/delete/:empId`, async (req, res) => {
   }
 });
 
+
+app.use('/auth', authRouter)
+
+
+
+
 // handle the payment using stripe
 // This is your test secret API key.
 
 
 // const YOUR_DOMAIN = 'http://localhost:4242';
 
-app.post('/create-checkout-session', async (req, res) => {
+app.post(`${path}/create-checkout-session`, async (req, res) => {
   try {
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],

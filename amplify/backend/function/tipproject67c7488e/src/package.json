@@ -8,6 +8,8 @@
     "aws-serverless-express": "^3.3.5",
     "body-parser": "^1.19.1",
     "express": "^4.17.2",
+    "googleapis": "^144.0.0",
+    "jsonwebtoken": "^9.0.2",
     "stripe": "^16.10.0"
   },
   "devDependencies": {

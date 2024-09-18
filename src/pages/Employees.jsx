@@ -1,5 +1,5 @@
 import { Box } from "@mui/material"
-import EmployeeUi from "../UI/employee/EmployeeUi"
+import EmployeeUi from "../common/employee/EmployeeUi"
 
 function Employees() {
   return (
@@ -9,4 +9,4 @@ function Employees() {
   )
 }
 
-export default Employees
+export default Employees;
